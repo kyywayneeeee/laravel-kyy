@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>@yield('title')</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,22 +28,22 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.index">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fa-solid fa-kiwi-bird"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">home </div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item {{Route::is('dashboard*') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route ('dashboard')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -53,86 +53,42 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Master Data
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+            <li class="nav-item {{Route::is('category*') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route ('category.index')}}">
+                    <i class="fas fa-fw fa-tag"></i>
+                    <span>Master Category
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+            <li class="nav-item {{Route::is('item*') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route ('item.index')}}">
+                    <i class="fas fa-fw fa-store"></i>
+                    <span>Master items
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
             </li>
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Transactions
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+            <li class="nav-item {{Route::is('transaction*') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route ('transaction.index')}}">
+                    <i class="fas fa-fw fa-cash-register"></i>
+                    <span>Transactions
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item active" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
             </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+            <li class="nav-item {{Route::is('detail*') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route ('detail.index')}}">
+                    <i class="fas fa-fw fa-wallet"></i>
+                    <span>History Transactions
+                </a>
             </li>
 
             <!-- Divider -->
@@ -160,7 +116,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
+                    {{-- <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
@@ -172,7 +128,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -202,7 +158,7 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        {{-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
@@ -250,9 +206,9 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <!-- Nav Item - Messages -->
+                        {{-- <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -316,7 +272,7 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -360,14 +316,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
+                    <h1 class="h3 mb-4 text-gray-800">@yield('content-title')</h1>
+                
+                    @yield('content')
                 </div>
-                <!-- /.container-fluid -->
+                <!-- /.container-fluid --> 
 
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
